@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HAPPY VALENTINE'S DAY</title>
-<link rel="icon" type="image/png" sizes="100%" href="https://pngtree.com/so/valentines-day">
+<link rel="icon" type="image/png" href="https://pngtree.com/so/valentines-day">
 <style>
   body {
     margin: 0;
@@ -19,52 +19,46 @@
 
   .container {
     text-align: center;
-    max-width: 600px;
-    padding: 30px;
-    border-radius: 15px;
+    max-width: 85%;
+    padding: 20px;
+    border-radius: 12px;
     background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   }
 
-  h1 {
-    font-size: 36px;
+  h2 {
+    font-size: 24px;
     color: #FF6F61;
     font-style: italic;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 8px;
   }
 
   p {
-    font-size: 20px;
+    font-size: 16px;
     color: #C85A8E;
-    margin-bottom: 30px;
-    font-family: 'Segoe Script', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 15px;
   }
 
   .gif-container {
-    width: 80%;
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    margin: 0 auto;
-    margin-bottom: 30px;
+    width: 75%;
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: 0 auto 20px auto;
   }
 
   img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px;
   }
 
   button {
-    padding: 12px 24px;
-    font-size: 18px;
+    padding: 8px 16px;
+    font-size: 14px;
     border: 2px solid #ff99cc;
-    border-radius: 25px;
+    border-radius: 15px;
     cursor: pointer;
-    margin: 10px;
     transition: all 0.3s ease;
-    outline: none;
     background-color: #ff3399;
     color: #fff;
   }
@@ -72,29 +66,22 @@
   button:hover {
     background-color: #e6005c;
     border-color: #e6005c;
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
-  button:focus {
-    box-shadow: 0 0 0 3px #ff66b3;
-  }
-
-  .shake {
-    animation: shake 0.5s ease-in-out;
-  }
-
-  @keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
+  .small-button {
+    font-size: 10px;
+    padding: 4px 8px;
+    margin-top: 5px;
+    background-color: #ff66b3;
+    border-color: #ff66b3;
   }
 </style>
 </head>
 <body>
 <div class="container">
   <h2>hi cocobelococo</h2>
+  <button class="small-button" onclick="playHiSong()">Hi!</button>
   <p> If anyone hasn't asked you yet, will you be my valentine? 😜</p>
   <p> Happy Valentine's Day! </p>
   <div class="gif-container">
@@ -106,14 +93,14 @@
 </div>
 
 <script>
-  var audio = new Audio('https://raw.githubusercontent.com/Nguyen-Tran3/loo/d70bb9fb47573f894814a603265449b9c40dbaf1/never%20let%20me%20go.mp4');
+  var audio = new Audio();
   audio.loop = true;
   audio.volume = 0.5;
 
-  // Try to autoplay music when the page loads
-  document.addEventListener('DOMContentLoaded', function() {
-    audio.play().catch(error => console.log("Autoplay blocked: ", error));
-  });
+  function playHiSong() {
+    audio.src = 'https://raw.githubusercontent.com/Nguyen-Tran3/loo/d70bb9fb47573f894814a603265449b9c40dbaf1/never%20let%20me%20go.mp4';
+    audio.play();
+  }
 
   function playSong() {
     audio.src = 'https://raw.githubusercontent.com/Nguyen-Tran3/loo/main/Fetty%20Wap%20%20-%20Again%20%5BAudio%20Only%5D.mp3';
