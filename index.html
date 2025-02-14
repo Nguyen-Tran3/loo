@@ -119,7 +119,14 @@
   }
 
   function noClicked() {
-    alert("Think again.");
+    if (audio && !audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+
+    audio = new Audio('https://raw.githubusercontent.com/Nguyen-Tran3/loo/main/Marvins%20Room.mp3');
+    audio.play();
+    alert("Think again. 😒");
     document.getElementById('noButton').classList.add('shake');
     setTimeout(function() {
       document.getElementById('noButton').classList.remove('shake');
